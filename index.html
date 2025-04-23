@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Citações Informais</h1>
+        
+        <div class="button-group">
+            <button id="btnAbout" class="active" onclick="showSection('about')">Sobre</button>
+            <button id="btnCreate" onclick="showSection('create')">Criar Item</button>
+            <button id="btnList" onclick="showSection('list')">Listar Itens</button>
+            <button id="btnRefresh" onclick="loadItems()" title="Recarregar lista">↻</button>
+        </div>
+        
+        
+        <div id="about" class="content-section active">
+            <h2>Sobre o Projeto</h2>
+            <p>
+                Uma Mock API é uma versão simulada de uma API real, usada principalmente para testes e desenvolvimento. 
+                Ela permite que os desenvolvedores simulem comportamentos e respostas de uma API sem precisar se conectar a um serviço de backend ativo. 
+                Isso é especialmente útil em situações como desenvolvimento paralelo, testes ou quando o backend não está disponível. 
+            </p>
+        </div>
+        
+        
+        <div id="create" class="content-section">
+            <h2>Criar Novo Item</h2>
+            <form id="itemForm">
+                <div class="form-group">
+                    <label for="title">Título:</label>
+                    <input type="text" id="title" name="title" placeholder="Digite um título" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="content">Conteúdo:</label>
+                    <textarea id="content" name="content" placeholder="Digite o conteúdo" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="author">Autor:</label>
+                    <input type="text" id="author" name="author" placeholder="Seu nome" required>
+                </div>
+                
+                <button type="submit">Salvar Item</button>
+            </form>
+            
+            <div id="formMessage" class="message"></div>
+        </div>
+        
+        
+        <div id="list" class="content-section">
+            <h2>Itens Cadastrados</h2>
+            <div id="list-container">
+                <div class="loading">Carregando itens...</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"  defer></script>
+</body>
+</html>
+
